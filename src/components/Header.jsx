@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BasketImg from '../assets/BasketImg'
-
+import {useSelector} from 'react-redux'
 function Header() {
+    const items = useSelector(state => state.Basket.items)
     return (
         <header className='header'>
             <div className="wr">
@@ -13,7 +14,7 @@ function Header() {
                     
                     <Link to='/basket'>
                     <div className="basket">
-                    <div className="basket-counter">1</div>
+                    <div className="basket-counter">{items.length}</div>
                         <BasketImg />
                     </div>
                     </Link>

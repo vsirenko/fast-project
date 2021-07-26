@@ -2,7 +2,6 @@ import React from 'react'
 import { getItems } from '../../actions/api'
 import Item from '../Item'
 
-
 function Main() {
     const [items, setItems] = React.useState([])
     const [sort, setSort] = React.useState()
@@ -30,7 +29,7 @@ function Main() {
         getItems().then(resp => {setItems(resp.items) 
             setFilteredItems(resp.items)})
     }, [])
-    console.log(filteredItems);
+   
 
    
     return (
